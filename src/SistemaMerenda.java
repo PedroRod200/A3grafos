@@ -178,7 +178,7 @@ public class SistemaMerenda {
         int idOrigem = listaCreches.adicionarCreche(origem);
         int idDestino = listaCreches.adicionarCreche(destino);
 
-        // Atualiza matriz com 1 (indicando conexão)
+
         matrizAdjacencia[idOrigem][idDestino] = 1;
         matrizAdjacencia[idDestino][idOrigem] = 1;
 
