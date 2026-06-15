@@ -173,7 +173,7 @@ public class SistemaMerenda {
         }
     }
 
-    // Funcionalidade: Incluir novas conexões entre creches
+
     private static void inserirConexao(String origem, String destino, double distancia) {
         int idOrigem = listaCreches.adicionarCreche(origem);
         int idDestino = listaCreches.adicionarCreche(destino);
@@ -182,7 +182,7 @@ public class SistemaMerenda {
         matrizAdjacencia[idOrigem][idDestino] = 1;
         matrizAdjacencia[idDestino][idOrigem] = 1;
 
-        // Atualiza a lista encadeada com as distâncias
+
         NoCreche crecheOrigem = listaCreches.buscarCrechePorId(idOrigem);
         NoCreche crecheDestino = listaCreches.buscarCrechePorId(idDestino);
 
@@ -190,7 +190,7 @@ public class SistemaMerenda {
         crecheDestino.adicionarDistancia(idOrigem, distancia); // Grafo.txt não-direcionado
     }
 
-    // Funcionalidade: Informar o número de conexões partindo de cada creche
+
     private static void contarConexoesPorCreche() {
         System.out.println("\n--- CONEXOES POR CRECHE ---");
         for (int i = 0; i < listaCreches.tamanho; i++) {
@@ -203,7 +203,7 @@ public class SistemaMerenda {
         }
     }
 
-    // Funcionalidade: Listar creches conectadas em ordem crescente de distância
+
     private static void listarConexoesOrdenadas(String nomeCreche) {
         int id = listaCreches.buscarIdPorNome(nomeCreche);
         if (id == -1) {
@@ -213,7 +213,7 @@ public class SistemaMerenda {
 
         NoCreche creche = listaCreches.buscarCrechePorId(id);
 
-        // Contar quantas conexões existem para criar vetores primitivos
+
         int totalConexoes = 0;
         NoDistancia temp = creche.distancias;
         while (temp != null) {
@@ -226,7 +226,7 @@ public class SistemaMerenda {
             return;
         }
 
-        // Vetores primitivos para ordenação manual (sem Collections.sort)
+
         int[] ids = new int[totalConexoes];
         double[] dists = new double[totalConexoes];
 
@@ -239,7 +239,7 @@ public class SistemaMerenda {
             temp = temp.proximo;
         }
 
-        // Ordenação Bubble Sort pelas distâncias
+
         for (int i = 0; i < totalConexoes - 1; i++) {
             for (int j = 0; j < totalConexoes - i - 1; j++) {
                 if (dists[j] > dists[j + 1]) {
@@ -261,7 +261,7 @@ public class SistemaMerenda {
         }
     }
 
-    // Funcionalidade: Informar a distância entre duas creches
+
     private static void consultarDistancia(String crecheA, String crecheB) {
         int idA = listaCreches.buscarIdPorNome(crecheA);
         int idB = listaCreches.buscarIdPorNome(crecheB);
