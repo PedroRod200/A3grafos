@@ -105,7 +105,7 @@ public class SistemaMerenda {
     private static ListaEncadeada listaCreches = new ListaEncadeada();
 
     public static void main(String[] args) {
-        carregarDadosDoArquivo("Grafo.txt");
+        carregarDadosDoArquivo("src/Grafo.txt");
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
